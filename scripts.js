@@ -29,7 +29,7 @@ function getRandomPosition() {
 
 function submitPlan() {
     // Get selected date from the text field
-    var selectedDate = document.getElementById('date-input').value.trim();
+    var selectedDate = document.getElementById('date-input').value;
 
     // Get selected dinner option
     var selectedDinner = document.querySelector('input[name="dinner"]:checked');
@@ -40,10 +40,10 @@ function submitPlan() {
     var activityValue = selectedActivity ? selectedActivity.value : "";
 
     // Get other dinner option if provided
-    var otherDinner = document.getElementById('other-input').value.trim();
+    var otherDinner = document.getElementById('other-dinner-input').value.trim();
 
     // Get other activity option if provided
-    var otherActivity = document.getElementById('other-input').value.trim();
+    var otherActivity = document.getElementById('other-activity-input').value.trim();
 
     // Store selected options in an array
     var selectedOptions = [];
@@ -82,7 +82,7 @@ var selectedOptions = JSON.parse(localStorage.getItem('selectedOptions'));
 
 // Display selected options in the "plan-summary" section
 var planSummary = document.querySelector('.plan-summary');
-if (selectedOptions.length > 0) {
+if (selectedOptions) {
     var pDate = document.createElement('p');
     pDate.textContent = selectedOptions[0];
     planSummary.appendChild(pDate);
@@ -102,3 +102,32 @@ if (selectedOptions.length > 0) {
 
 // Clear local storage after retrieving selected options
 localStorage.removeItem('selectedOptions');
+
+(function() {
+    emailjs.init("YPUB78N8g-4ci8FOH"); // Your EmailJS user ID
+})();
+function sendEmail() {
+    var userEmail = document.getElementById('user_email').value;
+    var planSummary = document.querySelector('.plan-summary');
+    var paragraphs = planSummary.getElementsByTagName('p');
+    var templateParams = {
+        user_email: userEmail,
+        plan_date: paragraphs.length > 0 ? paragraphs[0].textContent : '',
+        dinner_place: paragraphs.length > 1 ? paragraphs[1].textContent : '',
+        after_dinner_activities: paragraphs.length > 2 ? paragraphs[2].textContent : ''
+    };
+    emailjs.send('service_7g3q2wg', 'template_sq2jequ', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("Email sent successfully!");
+            var videoContainer = document.querySelector('.video-container');
+            videoContainer.style.display = 'block';
+            var video = document.getElementById('valentine-video');
+            video.play();
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("Failed to send email. Please try again.");
+        });
+}
+
+
