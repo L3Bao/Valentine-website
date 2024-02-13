@@ -77,18 +77,38 @@ button:hover {
 .plan-summary p {
     margin: 5px 0;
 }
-.video-container {
-    max-width: 100%;
-    margin: 10px auto;
-    overflow: hidden;
-    display: none; /* Hide the video initially */
+.card {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    text-align: center;
 }
+
 #valentine-video {
     width: 100%;
     height: auto;
-    margin: 10 auto;
-
+    border-radius: 10px;
 }
+
+.custom-message h1 {
+    font-size: 2em;
+    color: #ff1493; /* Deep pink color for the text */
+    margin: 20px 0;
+}
+
+.email-check-button {
+    padding: 10px 20px;
+    background-color: #ff4060;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
 #user_email {
     width: 100%;
     padding: 10px;
@@ -224,3 +244,33 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+.heart {
+    background-color: red;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+  }
+  
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
+  
+  .heart:before {
+    top: -15px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 15px;
+    top: 0;
+  }

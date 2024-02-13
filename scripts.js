@@ -116,18 +116,23 @@ function sendEmail() {
         dinner_place: paragraphs.length > 1 ? paragraphs[1].textContent : '',
         after_dinner_activities: paragraphs.length > 2 ? paragraphs[2].textContent : ''
     };
+
     emailjs.send('service_7g3q2wg', 'template_sq2jequ', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert("Email sent successfully!");
-            var videoContainer = document.querySelector('.video-container');
-            videoContainer.style.display = 'block';
-            var video = document.getElementById('valentine-video');
-            video.play();
+
+            // Redirect to video-message.html
+            window.location.href = 'video-message.html';
         }, function(error) {
             console.log('FAILED...', error);
             alert("Failed to send email. Please try again.");
         });
 }
+
+
+
+
+
 
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Message</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Hehe anh iu iem <3 </h1>
+
+                <video id="valentine-video" controls autoplay loop>
+                    <source src="Villager x Whislte (Josh Hutcherson).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="love-button" onclick="startFallingHearts()">Spread the Love</button>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        window.onload = function () {
+            var video = document.getElementById('valentine-video');
+            if (video) {
+                video.play().catch(function (error) {
+                    console.error("Video play failed:", error);
+                });
+            }
+        };
+
+        function startFallingHearts() {
+    for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * (window.innerWidth - 30) + 'px'; // Ensure hearts start within the viewport width
+        heart.style.animation = 'fall ' + (Math.random() * 2 + 3) + 's linear forwards';
+
+        document.body.appendChild(heart);
+
+        // Remove heart after it falls
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+}
+
+// Keyframes for falling animation
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = `
+@keyframes fall {
+    0% { top: -100px; opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+}`;
+document.head.appendChild(styleSheet);
+
+    </script>
+</body>
+
+</html>
