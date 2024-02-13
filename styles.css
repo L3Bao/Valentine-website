@@ -1,0 +1,60 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff4060;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Added margin to ensure consistent space */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4060;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    background-color: #ff1f4d;
+}
+
+.yes-button {
+    margin-right: 10px;
+}
+
+.no-button {
+    margin-left: 10px;
+}
+
+.yes-button.bigger {
+    transform: scale(1.1);
+}

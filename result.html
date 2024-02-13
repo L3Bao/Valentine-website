@@ -3,44 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Message</title>
+    <title>Ăng nhăng nhăng kết quả nề</title>
     <link rel="icon" type="image/x-icon" href="heart_like_love_twitter_icon_127132.ico">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
+        /* Additional CSS styles */
+        .plan-summary {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
         }
-        #content {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .plan-summary p {
+            margin: 5px 0;
         }
-        h1 {
-            color: #ff4060;
+
+        .video-container {
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
         }
-        p {
-            color: #555;
-        }
-        video {
+
+        #valentine-video {
             width: 100%;
             height: auto;
+        }
+
+        /* Styling for options card */
+        .options-card {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .options-card h2 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
     <div id="content">
-        <h1>Hihi cảm ưn vì đã đồng ý (không đồng ý hộ) =))))</h1>
-        <p>Nói chứ anh yêu em ạ. Ăng nhăng nhăng !</p>
-        <video controls autoplay>
-            <source src="Villager x Whislte (Josh Hutcherson).mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <h1>Ăng nhăng nhăng chọn là nhớ đi ! Also, love you ạ <3 </h1>
+        <div class="plan-summary">
+            <!-- Display the selected options here -->
+        </div>
+        <div class="video-container">
+            <!-- Embed the video here -->
+            <video id="valentine-video" controls autoplay loop muted>
+                <source src="Villager x Whislte (Josh Hutcherson).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>

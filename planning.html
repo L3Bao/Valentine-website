@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng ý gòi thì plan là đi đâu koyyy!!!</title>
+    <link rel="icon" type="image/x-icon" href="heart_like_love_twitter_icon_127132.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scipts.js"></script>
+    <style>
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .options-heading {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Đồng ý gòi thì plan là đi đâu koyyy!!</h1>
+        <h2 class="options-heading">Rảnh khi nào ạ?</h2>
+        <div class="options" id="date-options">
+            <input type="text" id="date-input" placeholder="Enter date (DD-MM)">
+        </div>
+        <h2 class="options-heading">Ăn gì ạ?</h2>
+        <div class="options" id="dinner-options">
+            <label><input type="radio" name="dinner" value="Meat and meet"> Meat and meet</label>
+            <label><input type="radio" name="dinner" value="Haidilao"> Haidilao</label>
+            <label><input type="radio" name="dinner" value="A Fat hotpot"> A Fat hotpot</label>
+            <div class="other-input">
+                <input id="other-input" type="text" placeholder="Enter other option">
+            </div>
+            <!-- Add more options here -->
+        </div>
+        <h2 class="options-heading">Đi đâu chơi?</h2>
+        <div class="options" id="activity-options">
+            <label><input type="radio" name="activity" value="Công viên bờ sông"> Công viên bờ sông</label>
+            <label><input type="radio" name="activity" value="Ngồi bờ sông"> Ngồi bờ sông</label>
+            <label><input type="radio" name="activity" value="Đi siêu thị (?)"> Đi siêu thị (?)</label>
+            <!-- Add more options here -->
+        </div>
+        <div class="other-input">
+            <input id="other-input" type="text" placeholder="Enter other option">
+        </div>
+        <div class="button-container">
+            <button class="submit-button" onclick="submitPlan()">Submit</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
